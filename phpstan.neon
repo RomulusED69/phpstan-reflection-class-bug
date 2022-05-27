@@ -1,0 +1,20 @@
+includes:
+    - vendor/phpstan/phpstan-strict-rules/rules.neon
+    - vendor/phpstan/phpstan-symfony/extension.neon
+    - vendor/phpstan/phpstan-doctrine/extension.neon
+    - vendor/knplabs/doctrine-behaviors/phpstan-extension.neon
+
+parameters:
+    level: max
+    paths:
+        - src
+    excludePaths:
+        - config
+
+    inferPrivatePropertyTypeFromConstructor: true
+
+    symfony:
+        container_xml_path: var/cache/dev/App_KernelDevDebugContainer.xml
+
+    doctrine:
+        objectManagerLoader: tests/object-manager.php
